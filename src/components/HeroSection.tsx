@@ -38,12 +38,12 @@ const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Discover India's
             <span className="text-gradient-cultural block">Vibrant Culture</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
             From classical concerts to comedy shows, hire local artists, find vendors, 
             and book amazing cultural events near you
           </p>
@@ -71,15 +71,15 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-3">
+          {/* CTA Buttons - Mobile Optimized */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center max-w-2xl mx-auto">
+            <Button variant="hero" size="lg" className="text-base lg:text-lg px-6 py-4 h-auto">
               🎪 Book Shows
             </Button>
-            <Button variant="cultural" size="lg" className="text-lg px-8 py-3">
+            <Button variant="cultural" size="lg" className="text-base lg:text-lg px-6 py-4 h-auto">
               🎨 Hire Artists
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-black">
+            <Button variant="outline" size="lg" className="text-base lg:text-lg px-6 py-4 h-auto border-white text-white hover:bg-white hover:text-black">
               🛍️ Find Vendors
             </Button>
           </div>

@@ -133,6 +133,20 @@
 
   body {
     @apply bg-background text-foreground font-['Poppins',sans-serif];
+    /* Mobile optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Safe area for mobile devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
@@ -167,14 +181,21 @@
     animation: bounce-cultural 1s infinite;
   }
 
-  /* Interactive Elements */
+  /* Interactive Elements - Mobile Optimized */
   .hover-lift {
     transition: var(--transition-smooth);
   }
   
-  .hover-lift:hover {
+  .hover-lift:hover,
+  .hover-lift:active {
     transform: translateY(-4px);
     box-shadow: var(--shadow-vibrant);
+  }
+
+  /* Touch-friendly buttons */
+  .touch-button {
+    min-height: 44px;
+    min-width: 44px;
   }
 
   /* Text Gradient Effects */
