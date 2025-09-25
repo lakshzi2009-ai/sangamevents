@@ -2,59 +2,115 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>EventMela - Discover Indian Cultural Events, Book Local Artists & Find Event Vendors</title>
     <meta name="description" content="India's premier platform for discovering local cultural events, booking talented artists, and finding trusted event vendors. From classical concerts to comedy shows - celebrate Indian culture!" />
     <meta name="keywords" content="Indian events, local artists, cultural events, comedy shows, classical music, event vendors, book artists India, cultural festivals, event management India" />
+    
+    <!-- PWA & Mobile Optimization -->
+    <meta name="theme-color" content="#ff6b35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="EventMela">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: 'hsl(280, 70%, 50%)',
-                        'primary-glow': 'hsl(285, 85%, 65%)',
-                        'primary-dark': 'hsl(275, 60%, 40%)',
-                        secondary: 'hsl(45, 95%, 60%)',
-                        accent: 'hsl(15, 85%, 55%)',
-                        success: 'hsl(120, 70%, 50%)',
-                        warning: 'hsl(45, 95%, 60%)',
-                        cultural: 'hsl(280, 70%, 50%)',
-                        'gradient-start': 'hsl(280, 70%, 50%)',
-                        'gradient-end': 'hsl(285, 85%, 65%)'
+                        primary: 'hsl(14, 91%, 60%)',
+                        'primary-light': 'hsl(24, 95%, 70%)',
+                        'primary-dark': 'hsl(10, 85%, 45%)',
+                        secondary: 'hsl(280, 65%, 60%)',
+                        'secondary-light': 'hsl(290, 70%, 75%)',
+                        accent: 'hsl(340, 82%, 52%)',
+                        'accent-light': 'hsl(350, 85%, 65%)',
+                        success: 'hsl(142, 71%, 45%)',
+                        warning: 'hsl(43, 96%, 56%)',
+                        cultural: 'hsl(280, 65%, 60%)'
                     },
                     backgroundImage: {
-                        'gradient-primary': 'linear-gradient(135deg, hsl(280, 70%, 50%), hsl(285, 85%, 65%))',
-                        'gradient-cultural': 'linear-gradient(135deg, hsl(15, 85%, 55%), hsl(45, 95%, 60%))',
-                        'gradient-hero': 'linear-gradient(135deg, hsl(280, 70%, 50%), hsl(15, 85%, 55%))'
+                        'gradient-primary': 'linear-gradient(135deg, hsl(14, 91%, 60%), hsl(280, 65%, 60%))',
+                        'gradient-cultural': 'linear-gradient(45deg, hsl(43, 96%, 56%), hsl(14, 91%, 60%), hsl(280, 65%, 60%))',
+                        'gradient-hero': 'linear-gradient(135deg, hsl(14, 91%, 60%), hsl(280, 65%, 60%), hsl(340, 82%, 52%))'
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
-                        'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite'
+                        'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.5s ease-out'
+                    },
+                    fontFamily: {
+                        'display': ['Poppins', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            touch-action: manipulation;
+            overscroll-behavior: none;
+        }
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
         @keyframes pulse-glow {
-            0% { box-shadow: 0 0 20px rgba(139, 69, 19, 0.3); }
-            100% { box-shadow: 0 0 40px rgba(139, 69, 19, 0.6); }
+            0% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.6); }
         }
         @keyframes bounce-subtle {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .hero-bg {
-            background: linear-gradient(135deg, rgba(139, 69, 19, 0.8), rgba(255, 140, 0, 0.6)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ff8c00" width="1200" height="800"/><circle fill="%23ff6b35" cx="300" cy="200" r="100"/><circle fill="%23f7931e" cx="900" cy="150" r="80"/><circle fill="%23ffb84d" cx="150" cy="600" r="120"/><circle fill="%23ff8c00" cx="1000" cy="650" r="90"/></svg>');
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 53, 0.9) 0%, 
+                rgba(139, 69, 193, 0.8) 50%, 
+                rgba(255, 56, 96, 0.7) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="30" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="1200" height="800" fill="url(%23pattern)"/></svg>');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
