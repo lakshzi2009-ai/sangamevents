@@ -14,7 +14,7 @@ const Header = () => {
               <span className="text-white font-bold text-xl">🎭</span>
             </div>
             <div>
-              <h1 className="font-bold text-xl text-gradient-primary">SangamEvents</h1>
+              <h1 className="font-bold text-xl text-gradient-primary">EventMela</h1>
               <p className="text-xs text-muted-foreground">Local India</p>
             </div>
           </div>
